@@ -12,4 +12,4 @@ var connection = mysql.createPool({
   database:'FinBuddy'
 });
 
-mondule.exports = connection;
+module.exports = connection;
