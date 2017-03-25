@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname + '/FinBuddy_Bootstrap'))); //serves webapp
 app.use('/users', users);
-app.use('/budget_dadta', budget_data);
+app.use('/budget_data', budget_data);
 //TODO: include other urls for requests here
 
 // catch 404 and forward to error handler

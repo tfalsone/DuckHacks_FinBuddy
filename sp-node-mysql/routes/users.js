@@ -7,7 +7,7 @@ var express = require('express'),
     router = express.Router(),
     users = require('../models/users'); //reference to users.js file to use the defined functions to query db
 
-//ger from users table
+//get from users table
 //if there is an id, get by id, else get all users
 router.get('/:id?', function(req, res, next) {
   if(req.params.id){
