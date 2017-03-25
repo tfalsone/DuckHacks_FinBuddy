@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 //require routes defined in routes directory
-var users = require('./routes/users');
+var users = require('./routes/users'),
+    budget_data = require('./routes/budget_data');
 //TODO: add routes for the rest of the tables here
 
 var app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname + '/FinBuddy_Bootstrap'))); //serves webapp
 app.use('/users', users);
+app.use('/budget_dadta', budget_data);
 //TODO: include other urls for requests here
 
 // catch 404 and forward to error handler
