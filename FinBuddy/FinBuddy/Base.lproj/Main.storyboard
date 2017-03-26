@@ -1148,7 +1148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Hub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-Qq-hiW">
-                                <rect key="frame" x="135" y="312" width="105" height="43"/>
+                                <rect key="frame" x="135" y="296" width="105" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1202,6 +1202,13 @@
                                     <segue destination="MBu-um-Es3" kind="show" id="IeS-q9-Bic"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epP-T7-UXw">
+                                <rect key="frame" x="135" y="347" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -1211,6 +1218,7 @@
                         <outlet property="b_comparison" destination="d9F-20-7iu" id="iz8-tK-9JT"/>
                         <outlet property="b_edit" destination="97I-EH-WB7" id="BDR-ox-agf"/>
                         <outlet property="b_login" destination="fvT-0f-cwd" id="C5x-dt-Wtu"/>
+                        <outlet property="l_budget" destination="epP-T7-UXw" id="uVy-x5-L67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ej7-hc-AsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1256,6 +1264,11 @@
                                     <constraint firstAttribute="width" constant="375" id="DoJ-Ht-AgT"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-cV-XTh" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="36" y="142" width="300" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1264,10 +1277,13 @@
                             <constraint firstItem="mdz-A6-ly8" firstAttribute="top" secondItem="bPN-g0-uKg" secondAttribute="bottom" constant="-20" id="LhB-x6-JXw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pieChart" destination="kb3-cV-XTh" id="LGE-H9-Wx7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzE-hQ-45B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="101"/>
+            <point key="canvasLocation" x="1805.5999999999999" y="100.29985007496252"/>
         </scene>
     </scenes>
     <resources>

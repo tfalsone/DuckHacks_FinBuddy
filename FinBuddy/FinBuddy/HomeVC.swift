@@ -14,9 +14,17 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet weak var b_charts: UIButton!
     @IBOutlet weak var b_edit: UIButton!
     @IBOutlet weak var b_login: UIButton!
+    @IBOutlet weak var l_budget: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        let b_num = myData.totalBudget as NSNumber
+        let b_dollar = formatter.string(from: b_num)
+        
+        self.l_budget.text = b_dollar
         
         self.b_comparison.layer.cornerRadius = self.b_comparison.frame.height / 2
         self.b_comparison.layer.shadowColor = UIColor.black.cgColor
