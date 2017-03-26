@@ -4,13 +4,13 @@ $("#reg").click(function()){
     data["password"] = document.getElementById("password").value;
     data["name"] = document.getElementById("name").value;
     data["create_date"] = new Date();
-});
+}
 
 $http({
     method: 'POST';
     url: 'https://155.246.213.64:3000/users/';
     data: data;
-});
+})
 
 success(function(data)){
     if(data.errors){
@@ -20,4 +20,4 @@ success(function(data)){
         console.log("success");
         console.log(data);
     }
-};
+}

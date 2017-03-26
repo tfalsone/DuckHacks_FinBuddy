@@ -26,6 +26,52 @@
 
         <link href="../css/login_register.css" rel="stylesheet" type="text/css">
 
+        <?php
+$name = $email = $password = $confirm = "";
+$nameErr = $emailErr = $passErr = $confirmErr = $mismatchErr = "";
+
+if($_SERVER["REQUEST_METHOD] == "POST) {
+if(empty($POST["name"])){
+$nameErr = "Name is required";
+} else {
+$name = test_input($_POST["name"]);
+}
+
+if(empty($POST[""])){
+$emailErr = "Email is required";
+} else {
+$email = test_input($_POST["email"]);
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+$emailErr = "Invalid email format";
+}
+}
+
+if(empty($POST[""])){
+$passErr = "Please enter a password";
+} else {
+$password = test_input($_POST["password"]);
+}
+
+if(empty($POST[""])){
+$confirmErr = "Please confirm your password";
+} else {
+$confirm = test_input($_POST("confirm_password"));
+}
+
+$pass = test_input($_POST["password"]);
+$confirm = test_input($_POST("confirm_password"));
+if($pass != $confirm){
+$mismatchErr = "Your passwords do not match";
+}
+
+function test_input($data) {
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+return $data;
+}
+?>
+
     </head>
 
     <body>
@@ -67,36 +113,29 @@
                 </div>
                 <!-- /.container-fluid -->
                 <div id="login">
-                    <p>
-                        <input id="name" name="name" required="required" type="text" placeholder="Full Name"/>
-                    </p>
-                    <p>
-                        <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
-                    </p>
-                    <p>
-                        <input id="password" name="password" required="required" type="password" placeholder="Password"/>
-                    </p>
-                    <p>
-                        <input id="password" name="confirm_password" required="required" type="password" placeholder="Confirm Password" oninput="check(this)"/>
-                    </p>
-                    <script language='javascript' type='text/javascript'>
-                        var password = document.getElementById("password")
-                        , confirm_password = document.getElementById("confirm_password");
+                    <form method="post" action="../php/register.php">
+                        <p>
+                            <input id="name" name="name" required type="text" placeholder="Full Name"/>
+                            <span class="error"> <?echo $nameErr;?></span>
+                        </p>
+                        <p>
+                            <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
+                            <span class="error"> <?echo $emailErr;?></span>
+                        </p>
+                        <p>
+                            <input id="password" name="password" required="required" type="password" placeholder="Password"/>
+                            <span class="error"> <?echo $passErr;?></span>
+                        </p>
+                        <p>
+                            <input id="confirm_password" name="confirm_password" required="required" type="password" placeholder="Confirm Password" oninput="check(this)"/>
+                            <span class="error"> <?echo $confirmErr;?></span>
+                            <span class="error"><?echo $mismatchErr;?></span>
+                        </p>
+                        <p>
+                            <button type="submit" id="reg" class="btn btn-success">Register</button>
+                        </p>
+                    </form>
 
-                        function validatePassword(){
-                            if(password.value != confirm_password.value) {
-                                confirm_password.setCustomValidity("Passwords don't match");
-                            } else {
-                                confirm_password.setCustomValidity('');
-                            }
-                        }
-
-                        password.onchange = validatePassword;
-                        confirm_password.onkeyup = validatePassword;
-                    </script>
-                    <p>
-                        <a href="get_started.html" id="reg" class="btn btn-success">Register</a>
-                    </p>
                     <p>
                         Already a member?
                         <a href="login.html" class="btn btn-sm btn-default">Sign in</a>

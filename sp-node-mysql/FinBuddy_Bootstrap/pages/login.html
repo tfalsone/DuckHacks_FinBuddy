@@ -32,7 +32,35 @@
                 left: 300px
             }
 
+
+
         </style>
+        
+        <?php
+$email = $password ="";
+
+if(empty($POST[""])){
+$emailErr = "Email is required";
+} else {
+$email = test_input($_POST["email"]);
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+$emailErr = "Invalid email format";
+}
+}
+
+if(empty($POST[""])){
+$passErr = "Please enter a password";
+} else {
+$password = test_input($_POST["password"]);
+}
+
+function test_input($data) {
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+return $data;
+}
+?>
     </head>
 
     <body>
@@ -45,9 +73,9 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <!--
-                    <div class="reposition">
-                        <img src="../../../logo/logo_circle.png" style="width: 50%; height: 50%">
-                    </div>
+<div class="reposition">
+<img src="../../../logo/logo_circle.png" style="width: 50%; height: 50%">
+</div>
 -->
                     <a class="navbar-brand" href="../index.html" >FinBuddy</a>
                 </div>
@@ -75,24 +103,28 @@
                 </div>
                 <!-- /.container-fluid -->
                 <div id="login">
-                    <p>
-                        <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
-                    </p>
-                    <p>
-                        <input id="password" name="password" required="required" type="password" placeholder="Password"/>
-                    </p>
-                    <div style="display:none">
+                    <form>
                         <p>
-                            <font color="red">The username or password you entered is incorrect</font>
+                            <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
+                            <span class="error"> <?echo $emailErr;?></span>
                         </p>
-                    </div>
-                    <p>
-                        <a href="dashboard.html" class="btn btn-success">Sign in</a>
-                    </p>
-                    <p>
-                        Not a member yet?
-                        <a href="register.html" class="btn btn-sm btn-default">Join us</a>
-                    </p>
+                        <p>
+                            <input id="password" name="password" required="required" type="password" placeholder="Password"/>
+                            <span class="error"> <?echo $passErr;?></span>
+                        </p>
+                        <div style="display:none">
+                            <p>
+                                <font color="red">The username or password you entered is incorrect</font>
+                            </p>
+                        </div>
+                        <p>
+                            <button type="submit" class="btn btn-success">Sign In</button>
+                        </p>
+                        <p>
+                            Not a member yet?
+                            <a href="register.html" class="btn btn-sm btn-default">Join us</a>
+                        </p>
+                    </form>
                 </div>
             </div>
             <!-- /#page-wrapper -->
