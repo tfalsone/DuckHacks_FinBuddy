@@ -1,5 +1,5 @@
 /*global angular */
-var usersApp = angular.module('populate', ['ngRoute']);
+var usersApp = angular.module('usersApp', ['ngRoute']);
 usersApp.controller('populateFields', function ($scope, $http) {
     "use strict";
 
@@ -12,8 +12,8 @@ usersApp.controller('populateFields', function ($scope, $http) {
             $scope.savings_perc = budget_data["savings_perc"];
 
         });
-    
-    $http.get('http://155.246.213.64:3000/savings_budget_data/' + localStorage["user_id"])
+
+    $http.get('http://155.246.213.64:3000/savings_budget_data/' +localStorage["user_id"])
         .success(function (data) {
             var savings_budget_data = data[0];
             $scope.saving_perc = savings_budget_data["to_save_perc"];
@@ -22,7 +22,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
 
         });
 
-    $http.get('http://155.246.213.64:3000/living_budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.64:3000/living_budget_data/' +localStorage["user_id"])
         .success(function (data) {
             var living_budget_data = data[0];
 
@@ -32,34 +32,29 @@ usersApp.controller('populateFields', function ($scope, $http) {
             $scope.water_perc = living_budget_data["water_perc"];
             $scope.cable_internet_perc = living_budget_data["cable_internet_perc"];
             $scope.school_perc = living_budget_data["school_perc"];
-        
+
             $scope.rent = (($scope.rent_perc*($scope.living_budget_perc/100*$scope.income_monthly)/100)).toFixed(2);
-        
             $scope.electric = ($scope.electric_perc*($scope.living_budget_perc/100*$scope.income_monthly)/100).toFixed(2);
-        
             $scope.water = ($scope.water_perc*($scope.living_budget_perc/100*$scope.income_monthly)/100).toFixed(2);
-        
             $scope.cable_internet =($scope.cable_internet_perc*($scope.living_budget_perc/100*$scope.income_monthly)/100).toFixed(2);
-            
             $scope.school = ($scope.school_perc*($scope.living_budget_perc/100*$scope.income_monthly)/100).toFixed(2);
 
         });
-    
+
     $http.get('http://155.246.213.64:3000/food_budget_data/' + localStorage["user_id"])
         .success(function (data) {
         var food_budget_data = data[0];
         $scope.food_budget_perc = food_budget_data["food_tot_perc"];
         $scope.eat_out_perc = food_budget_data["eat_out_perc"];
         $scope.social_perc = food_budget_data["social_perc"];
-        
+
         $scope.food_budget = ($scope.food_budget_perc*$scope.income_monthly/100).toFixed(2);
         $scope.groceries_perc = food_budget_data["groceries_perc"];
         $scope.groceries = (food_budget_data["groceries_perc"]*$scope.food_budget/100).toFixed(2);
         $scope.eat_out = (food_budget_data["eat_out_perc"]*$scope.food_budget/100).toFixed(2);
         $scope.social = (food_budget_data["social_perc"]*$scope.food_budget/100).toFixed(2);
-        
-    });
 
+    });
 
     $scope.submitForm = function() {
         var living_perc = document.getElementById("living").value;
@@ -96,7 +91,20 @@ usersApp.controller('populateFields', function ($scope, $http) {
         savings_budget_data["to_save_perc"] = to_save_perc;
         savings_budget_data["to_buy_perc"] = to_buy_perc;
 
-        $http.put("http://155.246.213.64:3000/budget_data/"+localStorage["user_id"], budgetData).success(function(data){
+        $http.put("http://155.246.213.64:3000/budget_data/"+localStorage["user_id"], budgetData)
+          .success(function(data){
+               if(data.error){
+                console.log("error");
+                console.log(data);
+            }
+            else{
+                console.log("success");
+                console.log(data);
+            }
+        });
+
+        $http.put("http://155.246.213.64:3000/living_budget_data/"+localStorage["user_id"], livingData)
+          .success(function(data){
             if(data.error){
                 console.log("error");
                 console.log(data);
@@ -107,19 +115,9 @@ usersApp.controller('populateFields', function ($scope, $http) {
             }
         });
 
-        $http.put("http://155.246.213.64:3000/living_budget_data/"+localStorage["user_id"], livingData).success(function(data){
-            if(data.error){
-                console.log("error");
-                console.log(data);
-            }
-            else{
-                console.log("success");
-                console.log(data);
-            }
-        });
-
-        $http.put("http://155.246.213.64:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data).success(function(data){
-            if(data.error){
+        $http.put("http://155.246.213.64:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data)
+          .success(function(data){
+           if(data.error){
                 console.log("error");
                 console.log(data);
             }
@@ -129,6 +127,4 @@ usersApp.controller('populateFields', function ($scope, $http) {
             }
         });
     }
-    
 });
-
