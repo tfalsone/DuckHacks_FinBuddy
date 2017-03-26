@@ -26,6 +26,8 @@
         <!-- Custom Fonts -->
         <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+        <link href="../css/login_register.css" rel="stylesheet" type="text/css">
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -49,9 +51,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">FinBuddy</a>
+                    <img src="../../../logo/logo_circle_small.png" style="width: 30%; padding: 5px">
                 </div>
                 <!-- /.navbar-header -->
-
                 <ul class="nav navbar-top-links navbar-right">
 
 
@@ -74,183 +76,215 @@
                 </ul>
             </nav>
             <div id="page-wrapper" ng-app="usersApp" ng-controller="usersListCrtl">
-                <div class="row">
+                <div class="row" id="gdiv">
                     <div class="col-lg-12">
                         <h1 class="page-header">{{user_name}}</h1>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Savings Projection Graph
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="savings-area-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-5">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Savings Goals
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr class="success">
-                                        <td>Budgeted Savings</td>
-                                        <td></td>
-                                        <td><i class="fa fa-usd"></i>{{amt_save}}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>Goal Savings</td>
-                                        <td></td>
-                                        <td><i class="fa fa-usd"></i>5000.00</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>Amount left until goal</td>
-                                        <td></td>
-                                        <td><i class="fa fa-usd"></i>4500.00</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>Time left until goal</td>
-                                        <td></td>
-                                        <td>9 months</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Budget Breakdown
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="morris-bar-chart"></div>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-5">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Budget Breakdown
-                            <a href="google.com">(edit)</a>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Category</th>
-                                        <th>Subcategory</th>
-                                        <th>Money Alotted</th>
-                                        <th>Percent of Budget</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="success">
-                                        <td>Living</td>
-                                        <td><br>Rent<br>Electric<br>Water<br>Cable/Internet<br>School</td>
-                                        <td><i class="fa fa-usd"></i>{{living_budget}}<br><i class="fa fa-usd"></i>{{rent}}<br><i class="fa fa-usd"></i>{{electric}}<br><i class="fa fa-usd"></i>{{water}}<br><i class="fa fa-usd"></i>{{cable_internet}}<br><i class="fa fa-usd"></i>{{school}}<br></td>
-                                        <td>{{living_budget_perc}}%<br></td>
-                                    </tr>
-                                    <tr class="info">
-                                        <td>Food</td>
-                                        <td><br>Groceries<br>Dining Out<br>Social</td>
-                                        <td><i class="fa fa-usd"></i>{{food_budget}}<br><i class="fa fa-usd"></i>{{groceries}}<br><i class="fa fa-usd"></i>{{eat_out}}<br><i class="fa fa-usd"></i>{{social}}</td>
-                                        <td>{{food_budget_perc}}%</td>
-                                    </tr>
-                                    <tr class="danger">
-                                        <td>Savings</td>
-                                        <td><br>Money Saved<br>Money Spent</td>
-                                        <td><i class="fa fa-usd"></i>{{savings}}<br><i class="fa fa-usd"></i>{{money_saved}}<br><i class="fa fa-usd"></i>{{money_spent}}<br></td>
-                                        <td>{{savings_perc}}%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Individual Budget Breakdown
-                            </div>
-                            <!-- .panel-heading -->
-                            <div class="panel-body">
-                                <div class="panel-group" id="accordion">
-                                    <div class="panel panel-default">
+                <div class="container">
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#budget" data-toggle="tab">Budget Breakdown</a>
+                            </li>
+                            <li><a href="#savings" data-toggle="tab">Savings Breakdown</a>
+                            </li>
+                            <li><a href="#advanced" data-toggle="tab">Advanced Breakdown</a>
+                        </ul>
+                        <a href="edit.html">Edit Budget Breakdown</a>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="budget">
+                                <h4>Budget Breakdown by Living, Food, and Savings Costs</h4>
+                                <div class="col-lg-7">
+                                    <div class="panel panel-green">
                                         <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Living Expenses (<i class="fa fa-usd"></i>{{living_budget}})</a>
-                                            </h4>
+                                            Budget Breakdown
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse in">
-                                            <div class="panel-body">
-                                                <div class="panel-body">
-                                                    <div class="flot-chart">
-                                                        <div class="flot-chart-content" id="living-pie-chart"></div>
-                                                    </div>
-                                                </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="flot-chart">
+                                                <div class="flot-chart-content" id="morris-bar-chart"></div>
                                             </div>
                                         </div>
+                                        <!-- /.panel-body -->
                                     </div>
-                                    <div class="panel panel-default">
+                                    <!-- /.panel -->
+                                </div> <!-- budget breakdown graph -->
+                                <div class="col-lg-5">
+                                    <div class="panel panel-green">
                                         <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Food Expenses (<i class="fa fa-usd"></i>{{food_budget}})</a>
-                                            </h4>
+                                            Budget Breakdown
                                         </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <div class="panel-body">
-                                                    <div class="flot-chart">
-                                                        <div class="flot-chart-content" id="food-pie-chart"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Category</th>
+                                                        <th>Subcategory</th>
+                                                        <th>Money Alotted</th>
+                                                        <th>Percent of Budget</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="success">
+                                                        <td>Living</td>
+                                                        <td><br>Rent<br>Electric<br>Water<br>Cable/Internet<br>School</td>
+                                                        <td><i class="fa fa-usd"></i>{{living_budget}}<br><i class="fa fa-usd"></i>{{rent}}<br><i class="fa fa-usd"></i>{{electric}}<br><i class="fa fa-usd"></i>{{water}}<br><i class="fa fa-usd"></i>{{cable_internet}}<br><i class="fa fa-usd"></i>{{school}}<br></td>
+                                                        <td>{{living_budget_perc}}%<br></td>
+                                                    </tr>
+                                                    <tr class="info">
+                                                        <td>Food</td>
+                                                        <td><br>Groceries<br>Dining Out<br>Social</td>
+                                                        <td><i class="fa fa-usd"></i>{{food_budget}}<br><i class="fa fa-usd"></i>{{groceries}}<br><i class="fa fa-usd"></i>{{eat_out}}<br><i class="fa fa-usd"></i>{{social}}</td>
+                                                        <td>{{food_budget_perc}}%</td>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <td>Savings</td>
+                                                        <td><br>Money Saved<br>Money Spent</td>
+                                                        <td><i class="fa fa-usd"></i>{{savings}}<br><i class="fa fa-usd"></i>{{money_saved}}<br><i class="fa fa-usd"></i>{{money_spent}}<br></td>
+                                                        <td>{{savings_perc}}%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
+                                        <!-- /.panel-body -->
                                     </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Savings vs Spending (<i class="fa fa-usd"></i>{{income_monthly}})</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <div class="panel-body">
-                                                    <div class="flot-chart">
-                                                        <div class="flot-chart-content" id="savings-pie-chart"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                                </div> <!-- budget breakdown numbers -->
 
+                            </div>
+                            <div class="tab-pane fade" id="savings">
+                                <h4>Savings Projections and Goals</h4>
+                                <div class="col-lg-7">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            Savings Projection Graph
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div id="savings-area-chart"></div>
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div> <!-- Savings projections -->
+                                <div class="col-lg-5">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            Savings Goals
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr class="success">
+                                                        <td>Budgeted Savings</td>
+                                                        <td></td>
+                                                        <td><i class="fa fa-usd"></i>{{amt_save}}</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <td>Goal Savings</td>
+                                                        <td></td>
+                                                        <td><i class="fa fa-usd"></i>5000.00</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <td>Amount left until goal</td>
+                                                        <td></td>
+                                                        <td><i class="fa fa-usd"></i>4500.00</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <td>Time left until goal</td>
+                                                        <td></td>
+                                                        <td>9 months</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                </div> <!-- Savings goals -->
+
+                            </div>
+                            <div class="tab-pane fade" id="advanced">
+                                <h4>Individual Budget Breakdown</h4>
+                                <div class="col-lg-6">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            Individual Budget Breakdown
+                                        </div>
+                                        <!-- .panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="accordion">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Living Expenses (<i class="fa fa-usd"></i>{{living_budget}})</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                                        <div class="panel-body">
+                                                            <div class="panel-body">
+                                                                <div class="flot-chart">
+                                                                    <div class="flot-chart-content" id="living-pie-chart"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Food Expenses (<i class="fa fa-usd"></i>{{food_budget}})</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-body">
+                                                                <div class="flot-chart">
+                                                                    <div class="flot-chart-content" id="food-pie-chart"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Savings vs Spending (<i class="fa fa-usd"></i>{{income_monthly}})</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseThree" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="panel-body">
+                                                                <div class="flot-chart">
+                                                                    <div class="flot-chart-content" id="savings-pie-chart"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- advanced breakdown -->
+
+                            </div>
+
+                        </div>
                     </div>
+
+
+
+
+
                 </div>
+            </div>
+        </div>
         <!-- /#wrapper -->
 
         <!-- jQuery -->

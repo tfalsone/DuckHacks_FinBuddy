@@ -50,9 +50,9 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
                 ykeys: ['a'],
                 labels: ['Money Alotted'],
                 barColors: function (row, series, type) {
-                    if(row.label == "Living") return "#DFF0D8";
-                    else if(row.label == "Food") return "#D9EDF7";
-                    else if(row.label == "Savings") return "#F2DEDE";
+                    if(row.label == "Living") return "#2bc643";
+                    else if(row.label == "Food") return "#4286f4";
+                    else if(row.label == "Savings") return "#ba1a1a";
                 },
                 hideHover: 'auto',
                 resize: true
