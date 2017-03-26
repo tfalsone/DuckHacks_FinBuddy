@@ -8,7 +8,7 @@ var db = require('../dbconn'); //reference to dbconn.js to connect to FinBuddy d
 var savings_budget_data ={
   //query to add data to the living_budget_dadta table
   createSavingsBudgetData:function(data, callback){
-    return db.query("insert into savings_budget_data values()", [
+    return db.query("insert into savings_budget_data values(?,?,?,?,?,?)", [
       data.user_id,
       data.savings_tot_perc,
       data.to_save_perc,
