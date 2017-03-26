@@ -9,7 +9,8 @@ var cors = require('cors');
 //require routes defined in routes directory
 var users = require('./routes/users'),
     budget_data = require('./routes/budget_data'),
-    living_budget_data = require('./routes/living_budget_data');
+    living_budget_data = require('./routes/living_budget_data'),
+    savings_budget_data = require('./routes/savings_budget_data');
 //TODO: add routes for the rest of the tables here
 
 var app = express();
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname + '/FinBuddy_Bootstrap'))); //serves 
 app.use('/users', users);
 app.use('/budget_data', budget_data);
 app.use('/living_budget_data', living_budget_data);
+app.use('/savings_budget_data', savings_budget_data);
 //TODO: include other urls for requests here
 
 // catch 404 and forward to error handler
