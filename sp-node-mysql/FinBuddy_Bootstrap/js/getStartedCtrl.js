@@ -9,18 +9,18 @@ getStartedApp.controller('getStartedCtrl', function($scope, $http){
     var water_input = document.getElementById("water").value;
     var cableInput = document.getElementById("cable_internet").value;
     var tuitionInput = document.getElementById("tuition").value;
-    var totLiving = rentInput + electricInput + water_input + cableInput + tuitionInput;
+    var totLiving = parseInt(rentInput) + parseInt(electricInput) + parseInt(water_input) + parseInt(cableInput) + parseInt(tuitionInput);
     var incomeInput = document.getElementById("inputSuccess").value;
 
-    var living_perc = parseInt(totLiving/incomeInput);
-    var rent_perc = parseInt(rentInput/totLiving);
-    var electric_perc = parseInt(electricInput/totLiving);
-    var water_perc = parseInt(water_input/totLiving);
-    var cable_perc = parseInt(cableInput/totLiving);
-    var school_perc = 100 - rent_perc - electric_perc - water_perc - cableInput;
+    var rent_perc = (rentInput/totLiving)*100;
+    var electric_perc = (electricInput/totLiving)*100;
+    var water_perc = (water_input/totLiving)*100;
+    var cable_perc = (cableInput/totLiving)*100;
+    var school_perc = (tuitionInput/totLiving)*100;
 
+    var living_perc = (totLiving/incomeInput)*100;
     var num = 50 - living_perc;
-    var savings_perc = parseInt(20 + num/2);
+    var savings_perc = (20 + num/2);
     var food_perc = 100 - living_perc - savings_perc;
 
     var budgetData={};

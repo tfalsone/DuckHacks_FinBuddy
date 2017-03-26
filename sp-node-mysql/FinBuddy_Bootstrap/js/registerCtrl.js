@@ -10,6 +10,7 @@ registerApp.controller('registerCtrl', function($scope, $http) {
         mydata["password"] = document.getElementById("password").value;
         mydata["name"] = document.getElementById("name").value;
         //data["create_date"] = new Date();
+        localStorage.setItem("user_id", mydata["user_id"]);
 
     $http.post("http://155.246.213.64:3000/users", mydata).success(function (data) {
         if (data.error) {
@@ -20,7 +21,7 @@ registerApp.controller('registerCtrl', function($scope, $http) {
             console.log(data);
         }
 
-        localStorage.setItem("user_id", mydata["user_id"]);
+        //localStorage.setItem("user_id", mydata["user_id"]);
     });
   }
 });
