@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "backArrow.png",
+      "filename" : "logo_circle.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "backArrow@2x.png",
+      "filename" : "logo_circle@2x.png",
       "scale" : "2x"
     },
     {

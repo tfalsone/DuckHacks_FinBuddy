@@ -18,6 +18,7 @@
 		F36765471E873323000EDE1B /* MonthBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765461E873323000EDE1B /* MonthBudgetVC.swift */; };
 		F3D057AE1E87676F0069FBE0 /* LivingExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057AD1E87676F0069FBE0 /* LivingExpensesVC.swift */; };
 		F3D057B01E8782FA0069FBE0 /* HowICompareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */; };
+		F3D057B21E878BFE0069FBE0 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B11E878BFE0069FBE0 /* MyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F36765461E873323000EDE1B /* MonthBudgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthBudgetVC.swift; sourceTree = "<group>"; };
 		F3D057AD1E87676F0069FBE0 /* LivingExpensesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingExpensesVC.swift; sourceTree = "<group>"; };
 		F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowICompareVC.swift; sourceTree = "<group>"; };
+		F3D057B11E878BFE0069FBE0 /* MyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				F36765461E873323000EDE1B /* MonthBudgetVC.swift */,
 				F3D057AD1E87676F0069FBE0 /* LivingExpensesVC.swift */,
 				F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */,
+				F3D057B11E878BFE0069FBE0 /* MyData.swift */,
 			);
 			path = FinBuddy;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				F36765451E872199000EDE1B /* RegisterVC.swift in Sources */,
 				F36765251E870974000EDE1B /* LoginVC.swift in Sources */,
 				F36765231E870974000EDE1B /* AppDelegate.swift in Sources */,
+				F3D057B21E878BFE0069FBE0 /* MyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -174,6 +174,15 @@ class LivingExpensesVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
+        myData.rent = Float(self.i_rent.text!)!
+        myData.electric = Float(self.i_electric.text!)!
+        myData.water = Float(self.i_water.text!)!
+        myData.cable = Float(self.i_cable.text!)!
+        myData.school = Float(self.i_school.text!)!
+        
+        
+        
+        
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "HowICompare")
         self.present(nextViewController, animated:true, completion:nil)
     }
