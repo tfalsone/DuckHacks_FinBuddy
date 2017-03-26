@@ -25,53 +25,6 @@
         <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <link href="../css/login_register.css" rel="stylesheet" type="text/css">
-
-        <?php
-$name = $email = $password = $confirm = "";
-$nameErr = $emailErr = $passErr = $confirmErr = $mismatchErr = "";
-
-if($_SERVER["REQUEST_METHOD] == "POST) {
-if(empty($POST["name"])){
-$nameErr = "Name is required";
-} else {
-$name = test_input($_POST["name"]);
-}
-
-if(empty($POST[""])){
-$emailErr = "Email is required";
-} else {
-$email = test_input($_POST["email"]);
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-$emailErr = "Invalid email format";
-}
-}
-
-if(empty($POST[""])){
-$passErr = "Please enter a password";
-} else {
-$password = test_input($_POST["password"]);
-}
-
-if(empty($POST[""])){
-$confirmErr = "Please confirm your password";
-} else {
-$confirm = test_input($_POST("confirm_password"));
-}
-
-$pass = test_input($_POST["password"]);
-$confirm = test_input($_POST("confirm_password"));
-if($pass != $confirm){
-$mismatchErr = "Your passwords do not match";
-}
-
-function test_input($data) {
-$data = trim($data);
-$data = stripslashes($data);
-$data = htmlspecialchars($data);
-return $data;
-}
-?>
-
     </head>
 
     <body>
@@ -132,7 +85,7 @@ return $data;
 <span class="error"><?echo $mismatchErr;?></span>-->
                         </p>
                         <p>
-                            <button type="submit" id="reg" class="btn btn-success" ng-click="submitReg()">Register</button>
+                            <button id="reg" class="btn btn-success" ng-click="submitReg()">Register</button>
                         </p>
                     </form>
                     <p>
@@ -152,10 +105,12 @@ return $data;
 
         <!-- jQuery -->
         <script src="../vendor/jquery/jquery.min.js"></script>
-        
+
         <!-- Angular JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+        <script src="../js/registerCtrl.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
