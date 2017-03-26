@@ -202,7 +202,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
 
     });
 
-    $http.get('http://155.246.213.64:3000/monthly_savings' + localStorage["user_id"])
+    $http.get('http://155.246.213.64:3000/monthly_savings/' + localStorage["user_id"])
         .success(function (data) {
         monthly_saving = data[0];
         $scope.money_spent = ($scope.income_monthly - $scope.food_budget - $scope.living_budget).toFixed(2);
