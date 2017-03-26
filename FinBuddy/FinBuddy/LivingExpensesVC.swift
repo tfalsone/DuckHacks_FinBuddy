@@ -181,6 +181,8 @@ class LivingExpensesVC: UIViewController, UITextFieldDelegate {
         myData.cable = Float(self.i_cable.text!)!
         myData.school = Float(self.i_school.text!)!
         
+        myData.getPercExpenses()
+        
         myData.fillPercLiving()
         myData.fillPercSavings()
         myData.fillPercFood()

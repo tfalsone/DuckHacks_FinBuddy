@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterVC: UIViewController, UITextFieldDelegate {
 
@@ -89,6 +90,18 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func submitRegister(_ sender: Any) {
         //make rest call POST
+        let postInfo = [
+            "user_id": self.i_email.text!,
+            "password": self.i_password.text!,
+            "name": self.i_fullName.text!
+            ] as [String : Any]
+        Alamofire.request("http://155.246.213.64:3000/users", method: .post, parameters: postInfo, encoding: JSONEncoding.default).responseJSON {
+            response in
+            
+            debugPrint(response) }
+        
+        myData.userId = self.i_email.text!
+        myData.name = self.i_fullName.text!
         
         //navigate to putting in info
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "MyBudget")

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EditVC: UIViewController {
     @IBOutlet weak var b_home: UIButton!
@@ -108,6 +109,18 @@ class EditVC: UIViewController {
     @IBAction func submit(_ sender: Any) {
         myData.percFood = Int(s_food.value)
         myData.percSavings = Int(s_savings.value)
+        
+        let budgetInfo = [
+            "income_monthly": myData.totalBudget,
+            "food_perc": myData.percFood,
+            "living_perc": myData.percLiving,
+            "savings_perc": myData.percSavings
+            ] as [String : Any]
+        
+        Alamofire.request(url + "/budget_data/" + myData.userId, method: .put, parameters: budgetInfo, encoding: JSONEncoding.default).responseJSON {
+            response in
+            
+            debugPrint(response) }
         
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "HomeVC")
         self.present(nextViewController, animated:true, completion:nil)

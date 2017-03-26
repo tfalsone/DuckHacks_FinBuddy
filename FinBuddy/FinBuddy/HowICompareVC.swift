@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HowICompareVC: UIViewController {
     
@@ -80,9 +81,42 @@ class HowICompareVC: UIViewController {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
+        
+        //make rest call POST
+        let budgetInfo = [
+            "user_id": myData.userId,
+            "income_monthly": myData.totalBudget,
+            "food_perc": myData.percFood,
+            "living_perc": myData.percLiving,
+            "savings_perc": myData.percSavings
+            ] as [String : Any]
+        
+        let livingBudgetInfo = [
+            "user_id": myData.userId,
+            "living_tot_perc": myData.percLiving,
+            "rent_perc": myData.percRent,
+            "electric_perc": myData.percElectric,
+            "water_perc": myData.percWater,
+            "cable_internet_perc": myData.percCable,
+            "school_perc": myData.percSchool
+            ] as [String : Any]
+        print(myData)
+        
+        Alamofire.request(url + "/budget_data", method: .post, parameters: budgetInfo, encoding: JSONEncoding.default).responseJSON {
+            response in
+            
+            debugPrint(response) }
+        
+        Alamofire.request(url + "/living_budget_data", method: .post, parameters: livingBudgetInfo, encoding: JSONEncoding.default).responseJSON {
+            response in
+            
+            debugPrint(response) }
+
+        
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "HomeVC")
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

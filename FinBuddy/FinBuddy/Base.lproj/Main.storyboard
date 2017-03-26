@@ -80,6 +80,10 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Dk2-Bq-MUe" appends="YES" id="bj1-TS-TzD"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="b_login" destination="4hY-ZV-bMb" id="nXE-g3-c2F"/>
@@ -91,6 +95,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dk2-Bq-MUe">
+                    <connections>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="pKJ-Ft-CLd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="383.19999999999999" y="101.19940029985008"/>
         </scene>
@@ -1034,7 +1043,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.41176470588235292" green="0.94117647058823528" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1107,11 +1116,6 @@
                                     <constraint firstAttribute="width" constant="375" id="DoJ-Ht-AgT"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onK-fU-EP8">
-                                <rect key="frame" x="266" y="179" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1133,6 +1137,6 @@
         <image name="separator_bar" width="800" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sO0-zZ-XOq"/>
+        <segue reference="Nzk-ej-KXE"/>
     </inferredMetricsTieBreakers>
 </document>
