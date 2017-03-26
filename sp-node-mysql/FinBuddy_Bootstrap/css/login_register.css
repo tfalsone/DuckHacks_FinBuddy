@@ -33,7 +33,8 @@ form {
 }
 
 img {
-    position:inherit;
+    display: block;
+    margin: auto;
 }
 
 .content {
