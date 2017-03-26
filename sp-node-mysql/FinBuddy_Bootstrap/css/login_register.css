@@ -1,0 +1,21 @@
+#page-wrapper{
+    margin: auto;
+    position: relative;
+}
+
+#wrapper p{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#wrapper input{
+    margin-top: 4px;
+    padding: 10px 5px 10px 32px;
+    border: 1px solid rgb(0, 150, 0);
+    background: rgba(238, 236, 240, 0.2);
+}
+
+#page-wrapper h1{
+    text-align: center;
+    
+}

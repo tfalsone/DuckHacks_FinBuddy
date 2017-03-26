@@ -22,9 +22,8 @@
 
         <!-- Custom Fonts -->
         <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        
-        <link href="../css/login_register.css" rel="stylesheet" type="text/css">
 
+        <link href="../css/login_register.css" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -59,7 +58,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Login to FinBuddy</h1>
+                            <h1 class="page-header">Register with FinBuddy</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -68,22 +67,38 @@
                 <!-- /.container-fluid -->
                 <div id="login">
                     <p>
+                        <input id="name" name="name" required="required" type="text" placeholder="Full Name"/>
+                    </p>
+                    <p>
                         <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
                     </p>
                     <p>
                         <input id="password" name="password" required="required" type="password" placeholder="Password"/>
                     </p>
-                    <div style="display:none">
-                        <p>
-                            <font color="red">The username or password you entered is incorrect</font>
-                        </p>
-                    </div>
                     <p>
-                        <a href="dashboard.html" class="btn btn-success">Sign in</a>
+                        <input id="password" name="confirm_password" required="required" type="password" placeholder="Confirm Password" oninput="check(this)"/>
+                    </p>
+                    <script language='javascript' type='text/javascript'>
+                        var password = document.getElementById("password")
+                        , confirm_password = document.getElementById("confirm_password");
+
+                        function validatePassword(){
+                            if(password.value != confirm_password.value) {
+                                confirm_password.setCustomValidity("Passwords don't match");
+                            } else {
+                                confirm_password.setCustomValidity('');
+                            }
+                        }
+
+                        password.onchange = validatePassword;
+                        confirm_password.onkeyup = validatePassword;
+                    </script>
+                    <p>
+                        <a href="dashboard.html" id="reg" class="btn btn-success">Register</a>
                     </p>
                     <p>
-                        Not a member yet?
-                        <a href="register.html" class="btn btn-sm btn-default">Join us</a>
+                        Already a member?
+                        <a href="login.html" class="btn btn-sm btn-default">Sign in</a>
                     </p>
                 </div>
             </div>
