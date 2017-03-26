@@ -14,7 +14,7 @@ var monthly_savings ={
       data.month_yr,
       data.amt_save,
       data.amt_made,
-      dadta.amt_spent], callback)
+      data.amt_spent], callback)
   },
 
   //query to get data from living budget data by user_id
