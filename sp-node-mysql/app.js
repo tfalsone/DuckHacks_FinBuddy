@@ -11,7 +11,8 @@ var users = require('./routes/users'),
     budget_data = require('./routes/budget_data'),
     living_budget_data = require('./routes/living_budget_data'),
     savings_budget_data = require('./routes/savings_budget_data'),
-    monthly_savings = require('./routes/monthly_savings');
+    monthly_savings = require('./routes/monthly_savings'),
+    food_budget_data = require('./routes/food_budget_data');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/budget_data', budget_data);
 app.use('/living_budget_data', living_budget_data);
 app.use('/savings_budget_data', savings_budget_data);
 app.use('/monthly_savings', monthly_savings);
+app.use('/food_budget_data', food_budget_data);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
