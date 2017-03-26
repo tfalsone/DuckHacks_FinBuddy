@@ -19,6 +19,8 @@ registerApp.controller('registerCtrl', function($scope, $http) {
             console.log("Success");
             console.log(data);
         }
+
+        localStorage["user_id"] = mydata["user_id"];
     });
   }
 });
