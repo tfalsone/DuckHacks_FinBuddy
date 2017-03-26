@@ -223,59 +223,62 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
         element: 'savings-area-chart',
         data: [{
             period: '2017-03',
-            saved: 700,
-            spent: 1300,
+            saved: 500,
+            spent: 1500,
             made: 2000
         }, {
             period: '2017-04',
-            saved: 1300,
-            spent: 2700,
+            saved: 1000,
+            spent: 3000,
             made: 4000
         }, {
             period: '2017-05',
-            saved: 2000,
-            spent: 4000,
+            saved: 1500,
+            spent: 4500,
             made: 6000
         }, {
             period: '2017-06',
-            saved: 2500,
-            spent: 5500,
+            saved: 2000,
+            spent: 6000,
             made: 8000
         }, {
             period: '2017-07',
-            saved: 3100,
-            spent: 6900,
+            saved: 2500,
+            spent: 7500,
             made: 10000
         }, {
             period: '2017-08',
-            saved: 3900,
-            spent: 8100,
+            saved: 3000,
+            spent: 9000,
             made: 12000
         }, {
             period: '2017-09',
-            saved: 4500,
-            spent: 9500,
+            saved: 3500,
+            spent: 10500,
             made: 14000
         }, {
             period: '2017-10',
-            saved: 5200,
-            spent: 10800,
+            saved: 4000,
+            spent: 12000,
             made: 16000
         }, {
             period: '2017-11',
-            saved: 5800,
-            spent: 12200,
+            saved: 4500,
+            spent: 13500,
             made: 18000
         }, {
             period: '2017-12',
-            saved: 6500,
-            spent: 15500,
+            saved: 5000,
+            spent: 15000,
             made: 20000
         }],
+        preUnits: '$',
+        behaveLikeLine: true,
+        fillOpacity: 0.2,
         xkey: 'period',
-        ykeys: ['saved', 'spent', 'made'],
-        labels: ['Money Saved', 'Money Spent', 'Money Made'],
-        pointSize: 2,
+        ykeys: ['made', 'spent', 'saved'],
+        labels: ['Money Made', 'Money Spent', 'Money Saved'],
+        pointSize: 3,
         hideHover: 'auto',
         resize: true
     });
