@@ -3,12 +3,12 @@
 ** NOTES: MODELS TO QUERY LIVING_BUDGET_DATA TABLE IN FINBUDDY DB
 */
 
-var db = require('../dbconn'); //refernece to dbconn.js to connect to FinBuddy db
+var db = require('../dbconn'); //reference to dbconn.js to connect to FinBuddy db
 
 var living_budget_data ={
   //query to add data to the living_budget_dadta table
   createLivingBudgetData:function(data, callback){
-    return db.query("insert in living_budget_data values(?,?,?,?,?,?,?)", [
+    return db.query("insert into living_budget_data values(?,?,?,?,?,?,?)", [
       data.user_id,
       data.living_tot_perc,
       data.rent_perc,
@@ -28,7 +28,7 @@ var living_budget_data ={
     return db.query("update living_budget_data set living_tot_perc=?, rent_perc=?, electric_perc=?, water_perc=?, cable_internet_perc=?, school_perc=? where user_id=?", [
       data.living_tot_perc,
       data.rent_perc,
-      dadta.electric_perc,
+      data.electric_perc,
       data.water_perc,
       data.cable_internet_perc,
       data.school_perc, id], callback);

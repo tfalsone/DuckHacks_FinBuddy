@@ -1,6 +1,6 @@
 /* AUTHOR: MATTHEW AQUILES
 ** FINBUDDY
-** NOTES: MODELS TO QUERY BUDGET_DATA DATABASE IN FINBUDDY DB
+** NOTES: MODELS TO QUERY BUDGET_DATA TABLE IN FINBUDDY DB
 */
 
 var db = require('../dbconn'); //reference to dbconn.js to connect to FinBuddy db
