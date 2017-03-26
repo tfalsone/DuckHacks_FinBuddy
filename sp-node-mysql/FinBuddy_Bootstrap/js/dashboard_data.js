@@ -222,59 +222,59 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
     Morris.Area({
         element: 'savings-area-chart',
         data: [{
-            period: '2010 Q1',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
+            period: '2017-03',
+            saved: 700,
+            spent: 1300,
+            made: 2000
         }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
+            period: '2017-04',
+            saved: 1300,
+            spent: 2700,
+            made: 4000
         }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
+            period: '2017-05',
+            saved: 2000,
+            spent: 4000,
+            made: 6000
         }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
+            period: '2017-06',
+            saved: 2500,
+            spent: 5500,
+            made: 8000
         }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
+            period: '2017-07',
+            saved: 3100,
+            spent: 6900,
+            made: 10000
         }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
+            period: '2017-08',
+            saved: 3900,
+            spent: 8100,
+            made: 12000
         }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
+            period: '2017-09',
+            saved: 4500,
+            spent: 9500,
+            made: 14000
         }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
+            period: '2017-10',
+            saved: 5200,
+            spent: 10800,
+            made: 16000
         }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
+            period: '2017-11',
+            saved: 5800,
+            spent: 12200,
+            made: 18000
         }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
+            period: '2017-12',
+            saved: 6500,
+            spent: 15500,
+            made: 20000
         }],
         xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        ykeys: ['saved', 'spent', 'made'],
+        labels: ['Money Saved', 'Money Spent', 'Money Made'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -314,9 +314,9 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
     $scope.school_perc = living_budget_data["school_perc"];
     $scope.school = ($scope.school_perc*$scope.living_budget/100).toFixed(2);
     
-    $scope.amt_save = monthly_saving["amt_save"];
-    $scope.amt_made = monthly_saving["amt_made"];
-    $scope.amt_spent = monthly_saving["amt_spent"];
+    $scope.amt_save = monthly_saving["amt_save"].toFixed(2);
+    $scope.amt_made = monthly_saving["amt_made"].toFixed(2);
+    $scope.amt_spent = monthly_saving["amt_spent"].toFixed(2);
 
 	//});
 });
