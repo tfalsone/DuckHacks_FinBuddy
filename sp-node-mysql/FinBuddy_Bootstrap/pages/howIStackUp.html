@@ -42,7 +42,7 @@
             </nav><!--END NAVBAR-->
 
             <!-- Page Content -->
-            <div id="page-wrapper">
+            <div id="page-wrapper" ng-app="howIStackUpApp" ng-controller="howIStackUpCtrl">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -63,9 +63,9 @@
                           <p><font size=+3>Food: </font></p>
                         </div>
                         <div class="col-lg-6">
-                          <p></p>
-                          <p></p>
-                          <p></p>
+                          <p><font size=+3>{{living_perc}}%</font></p>
+                          <p><font size=+3>{{savings_perc}}%</font></p>
+                          <p><font size=+3>{{food_perc}}%</font></p>
                         </div>
                       </div>
                       <div class="col-lg-6">
@@ -93,6 +93,7 @@
         <!-- Angular JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <script src="../js/howIStackUpCtrl.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
         <!-- Metis Menu Plugin JavaScript -->
