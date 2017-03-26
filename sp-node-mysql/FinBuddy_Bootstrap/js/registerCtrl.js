@@ -20,7 +20,7 @@ registerApp.controller('registerCtrl', function($scope, $http) {
             console.log(data);
         }
 
-        localStorage["user_id"] = mydata["user_id"];
+        localStorage.setItem("user_id", mydata["user_id"]);
     });
   }
 });
