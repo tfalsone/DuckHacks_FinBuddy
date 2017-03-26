@@ -6,4 +6,4 @@ FinBuddy is a financial planning application marketed towards students. It's pri
 
 # To Run this Application
 --Desktop--
-Open the index.html file located at DuckHacks_FinBuddy\sp-node-mysql\FinBuddy_Bootstrap.
+Visit http://155.246.213.64:3000
