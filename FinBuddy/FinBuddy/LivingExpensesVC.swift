@@ -126,8 +126,8 @@ class LivingExpensesVC: UIViewController, UITextFieldDelegate {
                        animations: {
         },
                        completion: { finished in
-                        self.pb_progressBar.animate(start: myData.currProgBar, duration: 1, delay: 0, progress: 0.5)
-                        myData.currProgBar = 0.5
+                        self.pb_progressBar.animate(start: myData.currProgBar, duration: 1, delay: 0, progress: 0.67)
+                        myData.currProgBar = 0.67
         })
         UIView.animate(withDuration: 1,
                        delay: 0.5,

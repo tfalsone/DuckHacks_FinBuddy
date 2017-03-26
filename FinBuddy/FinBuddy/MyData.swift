@@ -9,18 +9,18 @@
 import Foundation
 
 struct allMyData {
-    var totalBudget:Float = 0
+    var totalBudget:Float = 2000
     
-    var rent:Float = 0
-    var electric:Float = 0
-    var water:Float = 0
-    var cable:Float = 0
-    var school:Float = 0
-    var totalLiving:Float = 0
-    var percLiving:Int = 0
+    var rent:Float = 100
+    var electric:Float = 100
+    var water:Float = 100
+    var cable:Float = 200
+    var school:Float = 400
+    var totalLiving:Float = 900
+    var percLiving:Int = 45
     
-    var percSavings:Int = 0
-    var percFood:Int = 0
+    var percSavings:Int = 22
+    var percFood:Int = 33
     
     var assessment:String = ""
     

@@ -78,8 +78,8 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
                         self.pb_progress.alpha = 1
         },
                        completion: { finished in
-                        self.pb_progress.animate(start: myData.currProgBar, duration: 1, delay: 0.0, progress: 0.25)
-                        myData.currProgBar = 0.25
+                        self.pb_progress.animate(start: myData.currProgBar, duration: 1, delay: 0.0, progress: 0.33)
+                        myData.currProgBar = 0.33
                         self.fadeInInputArea()
         })
     }

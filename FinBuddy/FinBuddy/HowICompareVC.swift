@@ -59,7 +59,8 @@ class HowICompareVC: UIViewController {
                        animations: {
         },
                        completion: { finished in
-                        self.pb_progressBar.animate(start: 0.25, duration: 1, delay: 0, progress: 0.5)
+                        self.pb_progressBar.animate(start: myData.currProgBar, duration: 1, delay: 0, progress: 1.0)
+                        myData.currProgBar = 1.0
         })
         UIView.animate(withDuration: 1,
                        delay: 0.5,
@@ -75,6 +76,11 @@ class HowICompareVC: UIViewController {
     
     @IBAction func backTapped(_ sender: Any) {
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "LivingExpenses")
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    @IBAction func nextTapped(_ sender: Any) {
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "HomeVC")
         self.present(nextViewController, animated:true, completion:nil)
     }
 

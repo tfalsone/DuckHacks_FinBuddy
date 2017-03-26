@@ -22,6 +22,10 @@
 		F3D057B01E8782FA0069FBE0 /* HowICompareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */; };
 		F3D057B21E878BFE0069FBE0 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B11E878BFE0069FBE0 /* MyData.swift */; };
 		F3D057B41E8798170069FBE0 /* AssessmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B31E8798170069FBE0 /* AssessmentVC.swift */; };
+		F3D057B81E87C4BE0069FBE0 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B71E87C4BE0069FBE0 /* EditVC.swift */; };
+		F3D057BA1E87C9660069FBE0 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B91E87C9660069FBE0 /* TransitionManager.swift */; };
+		F3D057BC1E87D02A0069FBE0 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057BB1E87D02A0069FBE0 /* ChartsVC.swift */; };
+		F3D057BE1E87D1EF0069FBE0 /* ComparisonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057BD1E87D1EF0069FBE0 /* ComparisonVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowICompareVC.swift; sourceTree = "<group>"; };
 		F3D057B11E878BFE0069FBE0 /* MyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 		F3D057B31E8798170069FBE0 /* AssessmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentVC.swift; sourceTree = "<group>"; };
+		F3D057B71E87C4BE0069FBE0 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		F3D057B91E87C9660069FBE0 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		F3D057BB1E87D02A0069FBE0 /* ChartsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
+		F3D057BD1E87D1EF0069FBE0 /* ComparisonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,10 @@
 				F3D057AF1E8782FA0069FBE0 /* HowICompareVC.swift */,
 				F3D057B11E878BFE0069FBE0 /* MyData.swift */,
 				F3D057B31E8798170069FBE0 /* AssessmentVC.swift */,
+				F3D057B71E87C4BE0069FBE0 /* EditVC.swift */,
+				F3D057B91E87C9660069FBE0 /* TransitionManager.swift */,
+				F3D057BB1E87D02A0069FBE0 /* ChartsVC.swift */,
+				F3D057BD1E87D1EF0069FBE0 /* ComparisonVC.swift */,
 			);
 			path = FinBuddy;
 			sourceTree = "<group>";
@@ -353,8 +365,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D057BA1E87C9660069FBE0 /* TransitionManager.swift in Sources */,
+				F3D057B81E87C4BE0069FBE0 /* EditVC.swift in Sources */,
 				F36765471E873323000EDE1B /* MonthBudgetVC.swift in Sources */,
 				F36765431E8719C3000EDE1B /* HomeVC.swift in Sources */,
+				F3D057BC1E87D02A0069FBE0 /* ChartsVC.swift in Sources */,
 				F3D057AE1E87676F0069FBE0 /* LivingExpensesVC.swift in Sources */,
 				F3D057B41E8798170069FBE0 /* AssessmentVC.swift in Sources */,
 				F3D057B01E8782FA0069FBE0 /* HowICompareVC.swift in Sources */,
@@ -362,6 +377,7 @@
 				F36765251E870974000EDE1B /* LoginVC.swift in Sources */,
 				F36765231E870974000EDE1B /* AppDelegate.swift in Sources */,
 				F3D057B21E878BFE0069FBE0 /* MyData.swift in Sources */,
+				F3D057BE1E87D1EF0069FBE0 /* ComparisonVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
