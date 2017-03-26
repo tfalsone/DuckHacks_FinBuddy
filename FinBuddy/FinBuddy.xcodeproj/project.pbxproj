@@ -26,6 +26,7 @@
 		F3D057BA1E87C9660069FBE0 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057B91E87C9660069FBE0 /* TransitionManager.swift */; };
 		F3D057BC1E87D02A0069FBE0 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057BB1E87D02A0069FBE0 /* ChartsVC.swift */; };
 		F3D057BE1E87D1EF0069FBE0 /* ComparisonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D057BD1E87D1EF0069FBE0 /* ComparisonVC.swift */; };
+		F3D7C1361E8836FE0054E39C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D7C1351E8836FE0054E39C /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F3D057B91E87C9660069FBE0 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		F3D057BB1E87D02A0069FBE0 /* ChartsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		F3D057BD1E87D1EF0069FBE0 /* ComparisonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonVC.swift; sourceTree = "<group>"; };
+		F3D7C1351E8836FE0054E39C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/FinBuddy-atqtvdtzstcmougcmwbscdylsscl/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D7C1361E8836FE0054E39C /* Charts.framework in Frameworks */,
 				C79F664139E7CCBAA03C826A /* Pods_FinBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +105,7 @@
 		C55695CD8788FA53F0A7C78B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3D7C1351E8836FE0054E39C /* Charts.framework */,
 				7C44844B54664B4DA0EB3B9F /* Pods_FinBuddy.framework */,
 				373A8B8D7D576B5FAB1CBC32 /* Pods_FinBuddyTests.framework */,
 			);

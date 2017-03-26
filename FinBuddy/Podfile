@@ -8,6 +8,8 @@ target 'FinBuddy' do
   # Pods for FinBuddy
   pod 'Alamofire', '~> 4.4’
   pod 'SwiftyJSON'
+  pod 'RealmSwift'
+  pod 'Charts'
 
   target 'FinBuddyTests' do
     inherit! :search_paths

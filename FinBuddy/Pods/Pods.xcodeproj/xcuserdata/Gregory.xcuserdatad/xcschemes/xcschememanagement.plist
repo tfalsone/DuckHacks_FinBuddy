@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FinBuddy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-FinBuddyTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +42,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>44F841DC4FF36B1E5DD80F743C2F4EB8</key>
+		<key>13ECA73B3A6687FAAF278BF0D03353CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5FEF5F20ED1CE50A697DA9EFD011B02A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6EE07972900A0A57AE82DCC3D3B6C7F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FE2F11D9A830482600CAD7F359CF2AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99330907988DAFDDE8BB1B103C06FCA7</key>
+		<key>F307B842FF76B2DE6C55DB67C0885325</key>
 		<dict>
 			<key>primary</key>
 			<true/>
