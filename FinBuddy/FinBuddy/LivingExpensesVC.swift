@@ -121,12 +121,13 @@ class LivingExpensesVC: UIViewController, UITextFieldDelegate {
     func fadeInInput() -> Void {
         print("Input has faded in")
         UIView.animate(withDuration: 0,
-                       delay: 0,
+                       delay: 0.5,
                        options: .curveEaseIn,
                        animations: {
         },
                        completion: { finished in
-                        self.pb_progressBar.animate(start: 0.25, duration: 1, delay: 0, progress: 0.5)
+                        self.pb_progressBar.animate(start: myData.currProgBar, duration: 1, delay: 0, progress: 0.5)
+                        myData.currProgBar = 0.5
         })
         UIView.animate(withDuration: 1,
                        delay: 0.5,

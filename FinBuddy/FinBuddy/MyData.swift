@@ -24,6 +24,8 @@ struct allMyData {
     
     var assessment:String = ""
     
+    var currProgBar:Float = 0.01
+    
     mutating func fillPercLiving() {
         totalLiving = rent + electric + water + cable + school
         percLiving = Int(totalLiving * 100 / totalBudget)
