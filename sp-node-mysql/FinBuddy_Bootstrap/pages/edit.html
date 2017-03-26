@@ -17,13 +17,13 @@
         <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
         <!-- Custom Fonts -->
         <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        
+
         <link href="../css/login_register.css" type="text/css">
-        
+
     </head><!--END HEAD-->
 
     <body>
-        <div id="wrapper">
+        <div id="wrapper-login">
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -45,208 +45,209 @@
             </nav><!--END NAVBAR-->
 
             <!-- Page Content -->
-            <div id="page-wrapper" ng-app="howIStackUpApp" ng-controller="howIStackUpCtrl">
+            <div id="page-wrapper-login" ng-app="howIStackUpApp" ng-controller="howIStackUpCtrl">
                 <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <h1 class="page-header">Update Data</h1>
-                      <div class="col-lg-4">
-                        <table class="table">
-                          <thead>
-                            <th>Category</th>
-                            <th>Subcategory</th>
-                            <th>Input Values</th>
-                            <th>Value Type</th>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">Living</th>
-                              <td>-</td>
-                              <td><p><input id="living"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Rent</td>
-                              <td><p><input id="living_rent"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Electric</td>
-                              <td><p><input id="living_electric"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Water</td>
-                              <td><p><input id="living_water"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Cable/Internet</td>
-                              <td><p><input id="living_cable"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Tuition</td>
-                              <td><p><input id="living_school"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="col-lg-4">
-                        <table class="table">
-                          <thead>
-                            <th>Category</th>
-                            <th>Subcategory</th>
-                            <th>Input Values</th>
-                            <th>Value Type</th>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">Savings</th>
-                              <td>-</td>
-                              <td><p><input id="savings"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>To Save</td>
-                              <td><p><input id="savings_save"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>To Buy</td>
-                              <td><p><input id="savings_buy"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="col-lg-4">
-                        <table class="table">
-                          <thead>
-                            <th>Category</th>
-                            <th>Subcategory</th>
-                            <th>Input Values</th>
-                            <th>Value Type</th>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">Food</th>
-                              <td>-</td>
-                              <td><p><input id="food"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Groceries</td>
-                              <td><p><input id="food_groceries"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Eat Out</td>
-                              <td><p><input id="food_eat_out"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Social</td>
-                              <td><p><input id="food_social"/></p></td>
-                              <td>
-                                <select class="selectpicker">
-                                  <option>%</option>
-                                  <option>$</option>
-                                </select>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Update Data</h1>
+                            <div class="col-lg-4">
+                                <table class="table">
+                                    <thead>
+                                        <th>Category</th>
+                                        <th>Subcategory</th>
+                                        <th>Input Values</th>
+                                        <th>Value Type</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Living</th>
+                                            <td>-</td>
+                                            <td><p><input id="living"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Rent</td>
+                                            <td><p><input id="living_rent"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Electric</td>
+                                            <td><p><input id="living_electric"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Water</td>
+                                            <td><p><input id="living_water"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Cable/Internet</td>
+                                            <td><p><input id="living_cable"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Tuition</td>
+                                            <td><p><input id="living_school"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-4">
+                                <table class="table">
+                                    <thead>
+                                        <th>Category</th>
+                                        <th>Subcategory</th>
+                                        <th>Input Values</th>
+                                        <th>Value Type</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Savings</th>
+                                            <td>-</td>
+                                            <td><p><input id="savings"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>To Save</td>
+                                            <td><p><input id="savings_save"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>To Buy</td>
+                                            <td><p><input id="savings_buy"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-4">
+                                <table class="table">
+                                    <thead>
+                                        <th>Category</th>
+                                        <th>Subcategory</th>
+                                        <th>Input Values</th>
+                                        <th>Value Type</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Food</th>
+                                            <td>-</td>
+                                            <td><p><input id="food"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Groceries</td>
+                                            <td><p><input id="food_groceries"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Eat Out</td>
+                                            <td><p><input id="food_eat_out"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>Social</td>
+                                            <td><p><input id="food_social"/></p></td>
+                                            <td>
+                                                <select class="selectpicker">
+                                                    <option>%</option>
+                                                    <option>$</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <p><a href="dashboard.html" class="btn btn-success">Submit Updates</a></p>
-                  </div>
-                </div>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <br/>
-                      <p>Subcategory percentages are percentages of the category budget value, not the entire budget.</p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p><a href="dashboard.html" class="btn btn-success">Submit Updates</a></p>
+                        </div>
                     </div>
-                  </div>
-                </div>
-            </div><!-- /#page-wrapper -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <br/>
+                                <p>Subcategory percentages are percentages of the category budget value, not the entire budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /#page-wrapper -->
+            </div>
         </div>
         <!-- /#wrapper -->
         <!-- jQuery -->

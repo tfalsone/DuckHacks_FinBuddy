@@ -13,7 +13,7 @@ body {
 }
 h1{
     text-align: center;
-    color: white;
+    color: black;
 }
 #page-wrapper {
     padding-left: 0px;
@@ -30,6 +30,31 @@ h1{
     border-color: #4CAF50;
   }
 }
+
+body-login {
+  background-color: #f8f8f8;
+}
+#wrapper-login {
+  width: 100%;
+  background-color: #f8f8f8;
+
+}
+#page-wrapper-login {
+    padding-left: 0px;
+  padding: 0 15px;
+  min-height: 568px;
+  background-color: #f8f8f8;
+}
+@media (min-width: ) {
+  #page-wrapper-login {
+    position: inherit;
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid #e7e7e7;
+    border-color: #f8f8f8;
+  }
+}
+
 .navbar-top-links {
   margin-right: 0;
 }

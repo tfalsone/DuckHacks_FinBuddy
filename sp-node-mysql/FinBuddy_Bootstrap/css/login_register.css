@@ -1,33 +1,30 @@
-#page-wrapper{
+#page-wrapper-login{
     margin: auto;
     position: relative;
 }
 
-#wrapper{
+#wrapper-login{
     margin: auto;
     position: relative;
 }
 
-#wrapper p{
+#wrapper-login p{
     margin-bottom: 15px;
     text-align: center;
 }
 
-#wrapper input{
+#wrapper-login input{
     margin-top: 4px;
     padding: 10px 5px 10px 32px;
     border: 1px solid rgb(0, 150, 0);
     background: rgba(238, 236, 240, 0.2);
 }
 
-#page-wrapper h1{
+#page-wrapper-login h1{
     text-align: center;
     
 }
 
-#page-wrapper input {
-    margin-bottom: 5px;
-}
 
 form {
     margin-left: 20%;
