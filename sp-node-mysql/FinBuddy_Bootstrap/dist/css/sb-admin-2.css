@@ -433,11 +433,18 @@ table.dataTable thead .sorting:after {
   }
 }
 
-.logo {
-    text-align: center;
-    height: 300
+#page-wrapper{
+    margin: auto;
+    position: relative;
 }
 
-.back {
-    padding-top: 5px;
+#wrapper p{
+    margin-bottom: 15px;
+}
+
+#wrapper input{
+    margin-top: 4px;
+    padding: 10px 5px 10px 32px;
+    border: 1px solid rgb(0, 150, 0);
+    background: rgba(238, 236, 240, 0.2);
 }
