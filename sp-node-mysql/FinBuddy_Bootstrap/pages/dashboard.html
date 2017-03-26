@@ -98,113 +98,215 @@
                 </div>
                 <!-- /.navbar-static-side -->
             </nav>
-
             <div id="page-wrapper" ng-app="usersApp" ng-controller="usersListCrtl">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">{{user_name}}</h1>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Overall Budget Breakdown
+                            Area Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="savings-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <div class="col-lg-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Budget Breakdown
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="success">
+                                        <td>Budgeted Savings</td>
+                                        <td></td>
+                                        <td><i class="fa fa-usd"></i>{{amt_save}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>Goal Savings</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>Amount left until goal</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>Time left until goal</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Budget Breakdown
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="flot-chart">
-                                <div class="flot-chart-content" id="pie-chart"></div>
+                                <div class="flot-chart-content" id="morris-bar-chart"></div>
                             </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Individual Budget Breakdown
+                            Budget Breakdown
                         </div>
-                        <!-- .panel-heading -->
-                        <div class="panel-body">
-                            <div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Living Expenses (<i class="fa fa-usd"></i>{{living_budget}})</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in">
-                                        <div class="panel-body">
+                        <!-- /.panel-heading -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Subcategory</th>
+                                        <th>Money Alotted</th>
+                                        <th>Percent of Budget</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>Living</td>
+                                        <td><br>Rent<br>Electric<br>Water<br>Cable/Internet<br>School</td>
+                                        <td><i class="fa fa-usd"></i>{{living_budget}}<br><i class="fa fa-usd"></i>{{rent}}<br><i class="fa fa-usd"></i>{{electric}}<br><i class="fa fa-usd"></i>{{water}}<br><i class="fa fa-usd"></i>{{cable_internet}}<br><i class="fa fa-usd"></i>{{school}}<br></td>
+                                        <td>{{living_budget_perc}}%<br></td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>Food</td>
+                                        <td><br>Groceries<br>Dining Out<br>Social</td>
+                                        <td><i class="fa fa-usd"></i>{{food_budget}}<br><i class="fa fa-usd"></i>{{groceries}}<br><i class="fa fa-usd"></i>{{eat_out}}<br><i class="fa fa-usd"></i>{{social}}</td>
+                                        <td>{{food_budget_perc}}%</td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>Savings</td>
+                                        <td><br>Money Saved<br>Money Spent</td>
+                                        <td><i class="fa fa-usd"></i>{{savings}}<br><i class="fa fa-usd"></i>{{money_saved}}<br><i class="fa fa-usd"></i>{{money_spent}}<br></td>
+                                        <td>{{savings_perc}}%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Individual Budget Breakdown
+                            </div>
+                            <!-- .panel-heading -->
+                            <div class="panel-body">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Living Expenses (<i class="fa fa-usd"></i>{{living_budget}})</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
                                             <div class="panel-body">
-                                                <div class="flot-chart">
-                                                    <div class="flot-chart-content" id="living-pie-chart"></div>
+                                                <div class="panel-body">
+                                                    <div class="flot-chart">
+                                                        <div class="flot-chart-content" id="living-pie-chart"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Food Expenses (<i class="fa fa-usd"></i>{{food_budget}})</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="panel-body">
+                                                    <div class="flot-chart">
+                                                        <div class="flot-chart-content" id="food-pie-chart"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Savings vs Spending (<i class="fa fa-usd"></i>{{income_monthly}})</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="panel-body">
+                                                    <div class="flot-chart">
+                                                        <div class="flot-chart-content" id="savings-pie-chart"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Food Expenses (<i class="fa fa-usd"></i>{{food_budget}})</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse">
-                                        <div class="flot-chart">
-                                            <div class="flot-chart-content" id="food-pie-chart"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Savings vs Spending (<i class="fa fa-usd"></i>{{income_monthly}})</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse">
-                                        <div class="flot-chart">
-                                            <div class="flot-chart-content" id="savings-pie-chart"></div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                </div>
+                        
                     </div>
                 </div>
+        <!-- /#wrapper -->
 
-                <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
 
-                <!-- jQuery -->
-                <script src="../vendor/jquery/jquery.min.js"></script>
+        <!-- Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-                <!-- Angular JS -->
-                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-                <!-- Bootstrap Core JavaScript -->
-                <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-                <!-- Metis Menu Plugin JavaScript -->
-                <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="../vendor/raphael/raphael.min.js"></script>
+        <script src="../vendor/morrisjs/morris.min.js"></script>
+        <script src="../data/morris-data.js"></script>
 
-                <!-- Morris Charts JavaScript -->
-                <script src="../vendor/raphael/raphael.min.js"></script>
-                <script src="../vendor/morrisjs/morris.min.js"></script>
-                <script src="../data/morris-data.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
+        <script src="../js/dashboard_data.js"></script>
+        <!-- Flot Charts JavaScript -->
+        <script src="../vendor/flot/excanvas.min.js"></script>
+        <script src="../vendor/flot/jquery.flot.js"></script>
+        <script src="../vendor/flot/jquery.flot.pie.js"></script>
+        <script src="../vendor/flot/jquery.flot.resize.js"></script>
+        <script src="../vendor/flot/jquery.flot.time.js"></script>
+        <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+        <script src="../data/flot-data.js"></script>
 
-                <!-- Custom Theme JavaScript -->
-                <script src="../dist/js/sb-admin-2.js"></script>
-                <script src="../js/dashboard_data.js"></script>
-                <!-- Flot Charts JavaScript -->
-                <script src="../vendor/flot/excanvas.min.js"></script>
-                <script src="../vendor/flot/jquery.flot.js"></script>
-                <script src="../vendor/flot/jquery.flot.pie.js"></script>
-                <script src="../vendor/flot/jquery.flot.resize.js"></script>
-                <script src="../vendor/flot/jquery.flot.time.js"></script>
-                <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-                <script src="../data/flot-data.js"></script>
+    </body>
 
-                </body>
-
-            </html>
+</html>
