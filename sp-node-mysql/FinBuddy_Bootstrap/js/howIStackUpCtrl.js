@@ -4,7 +4,7 @@ howIStackUpApp.controller('howIStackUpCtrl', function($scope, $http){
   "use strict";
 
   //TODO: need to update this url to get from whatever account is signed in
-  $http.get('http://155.246.213.64:3000/budget_data/hbarthol@stevens.edu')
+  $http.get('http://155.246.213.64:3000/budget_data/' + localStorage["user_id"])
     .success(function(data){
       //console.log(data);
       //console.log(data[0]["food_perc"]);
