@@ -76,7 +76,7 @@ return $data;
 
     <body>
 
-        <div id="wrapper-login">
+        <div id="wrapper-login" ng-app="registerApp" ng-controller="registerCtrl">
 
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -113,44 +113,49 @@ return $data;
                 </div>
                 <!-- /.container-fluid -->
                 <div id="login">
-                    <form method="post" action="../php/register.php">
+                    <form>
                         <p>
                             <input id="name" name="name" required type="text" placeholder="Full Name"/>
-                            <span class="error"> <?echo $nameErr;?></span>
+                            <!-- <span class="error"> <?echo $nameErr;?></span> -->
                         </p>
                         <p>
                             <input id="email" name="email" required="required" type="email" placeholder="Email Address"/>
-                            <span class="error"> <?echo $emailErr;?></span>
+                            <!--<span class="error"> <?echo $emailErr;?></span>-->
                         </p>
                         <p>
                             <input id="password" name="password" required="required" type="password" placeholder="Password"/>
-                            <span class="error"> <?echo $passErr;?></span>
+                            <!--<span class="error"> <?echo $passErr;?></span>-->
                         </p>
                         <p>
-                            <input id="confirm_password" name="confirm_password" required="required" type="password" placeholder="Confirm Password" oninput="check(this)"/>
-                            <span class="error"> <?echo $confirmErr;?></span>
-                            <span class="error"><?echo $mismatchErr;?></span>
+                            <input id="confirm_password" name="confirm_password" required="required" type="password" placeholder="Confirm Password">
+                            <!--<span class="error"> <?echo $confirmErr;?></span>
+<span class="error"><?echo $mismatchErr;?></span>-->
                         </p>
                         <p>
-                            <button type="submit" id="reg" class="btn btn-success">Register</button>
+                            <button type="submit" id="reg" class="btn btn-success" ng-click="submitReg()">Register</button>
                         </p>
                     </form>
-
                     <p>
                         Already a member?
                         <a href="login.html" class="btn btn-sm btn-default">Sign in</a>
                     </p>
-                                            <img src="../../../logo/logo_circle.png" align="middle">
+                    <img src="../../../logo/logo_circle.png" align="middle">
 
                 </div>
             </div>
             <!-- /#page-wrapper -->
+
+
 
         </div>
         <!-- /#wrapper -->
 
         <!-- jQuery -->
         <script src="../vendor/jquery/jquery.min.js"></script>
+        
+        <!-- Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -160,6 +165,8 @@ return $data;
 
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
+
+
 
     </body>
 
