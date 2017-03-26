@@ -1,0 +1,6 @@
+framework module Pods_FinBuddyTests {
+  umbrella header "Pods-FinBuddyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
