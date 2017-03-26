@@ -10,11 +10,11 @@ import UIKit
 
 extension UIProgressView {
     
-    func animate(duration: Double, progress: Float) {
+    func animate(start: Float, duration: Double, delay:Double, progress: Float) {
         
-        setProgress(0.01, animated: true)
+        setProgress(start, animated: true)
         
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: .curveLinear, animations: {
             self.setProgress(progress, animated: true)
         }, completion: nil)
     }
@@ -63,9 +63,11 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
         self.i_budget.borderStyle = UITextBorderStyle.none
         self.i_budget.layer.addSublayer(self.getBorder(self.i_budget))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fadeInBudget()
-
-        // Do any additional setup after loading the view.
     }
     
     func fadeInBudget() -> Void {
@@ -76,14 +78,14 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
                         self.pb_progress.alpha = 1
         },
                        completion: { finished in
-                        self.pb_progress.animate(duration: 1, progress: 0.25)
+                        self.pb_progress.animate(start: 0.01, duration: 1, delay: 0.0, progress: 0.25)
                         self.fadeInInputArea()
         })
     }
     
     func fadeInInputArea() -> Void {
         UIView.animate(withDuration: 1,
-                       delay: 0.5,
+                       delay: 0,
                        options: .curveEaseIn,
                        animations: {
                         self.l_dollar.alpha = 1
@@ -97,7 +99,7 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
     
     func fadeInButton() -> Void {
         UIView.animate(withDuration: 0.75,
-                       delay: 0.5,
+                       delay: 0,
                        options: .curveEaseIn,
                        animations: {
                         self.b_next.alpha = 1
@@ -123,7 +125,9 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
     }
         
     @IBAction func nextTapped(_ sender: Any) {
-        
+        print("Next tapped")
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "LivingExpenses")
+        self.present(nextViewController, animated:true, completion:nil)
     }
 
     override func didReceiveMemoryWarning() {
