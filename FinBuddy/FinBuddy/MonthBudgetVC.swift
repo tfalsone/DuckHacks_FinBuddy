@@ -125,6 +125,8 @@ class MonthBudgetVC: UIViewController, UITextFieldDelegate {
     }
         
     @IBAction func nextTapped(_ sender: Any) {
+        myData.totalBudget = Float(self.i_budget.text!)!
+        
         print("Next tapped")
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "LivingExpenses")
         self.present(nextViewController, animated:true, completion:nil)

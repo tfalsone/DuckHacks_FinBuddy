@@ -180,8 +180,11 @@ class LivingExpensesVC: UIViewController, UITextFieldDelegate {
         myData.cable = Float(self.i_cable.text!)!
         myData.school = Float(self.i_school.text!)!
         
+        myData.fillPercLiving()
+        myData.fillPercSavings()
+        myData.fillPercFood()
         
-        
+        print(myData)
         
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "HowICompare")
         self.present(nextViewController, animated:true, completion:nil)

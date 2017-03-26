@@ -590,10 +590,71 @@
                             <constraint firstItem="JWY-Zw-87s" firstAttribute="centerX" secondItem="qSz-lJ-Fhd" secondAttribute="centerX" id="py5-uu-b5a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pb_progressBar" destination="s49-ys-FgI" id="fno-Fe-7Jt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d88-KV-HjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1806" y="1430"/>
+        </scene>
+        <!--AssessmentPop-->
+        <scene sceneID="DFM-zl-14A">
+            <objects>
+                <viewController storyboardIdentifier="AssessmentPop" title="AssessmentPop" id="sxo-FJ-iJH" customClass="AssessmentVC" customModule="FinBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="shN-RY-04u"/>
+                        <viewControllerLayoutGuide type="bottom" id="23K-zn-fm7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fN1-Tu-X9z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-kh-bpe">
+                                <rect key="frame" x="37" y="187" width="301" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="This is your assessment." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3H-FD-jRV">
+                                        <rect key="frame" x="8" y="50" width="284" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assessment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mN-Qn-M6N">
+                                        <rect key="frame" x="75" y="8" width="151" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKq-no-Ax0">
+                                        <rect key="frame" x="115" y="227" width="70" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41176470590000003" green="0.94117647059999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePopup:" destination="sxo-FJ-iJH" eventType="touchUpInside" id="pOY-RV-rxi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.5568627451" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="b_close" destination="SKq-no-Ax0" id="RWO-b4-uLv"/>
+                        <outlet property="l_text" destination="U3H-FD-jRV" id="s6S-uW-Xwf"/>
+                        <outlet property="v_box" destination="1fY-kh-bpe" id="u6u-Uj-3r5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BX8-Wt-Y1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652" y="2109.8950524737634"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="vzU-Y7-95a">
@@ -612,6 +673,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ej7-hc-AsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1094" y="101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9GG-Xe-qaT">
+            <objects>
+                <viewController id="eHm-np-uzX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="768-rQ-6jC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Xj-Me-2VN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AfY-V9-8RE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rjr-4I-AqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

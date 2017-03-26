@@ -22,12 +22,29 @@ struct allMyData {
     var percSavings:Int = 0
     var percFood:Int = 0
     
-    func fillPercLiving() {
-        percLiving = Int(totalBudget / (rent + electric + water + cable + school))
+    var assessment:String = ""
+    
+    mutating func fillPercLiving() {
+        totalLiving = rent + electric + water + cable + school
+        percLiving = Int(totalLiving * 100 / totalBudget)
     }
     
-    func fillPercSavings() {
-        var diff = 
+    mutating func fillPercSavings() {
+        let diff:Int = (50 - percLiving)/2
+        percSavings = 20 + diff
+    }
+    
+    mutating func fillPercFood() {
+        percFood = 100 - percLiving - percSavings
+        if percLiving > 50 {
+            assessment = "Looks like you spend more on living than the average person."
+        } else if percLiving == 50 {
+            assessment = "Looks like you are right with the average in terms of the amound you spend on living."
+        } else {
+            assessment = "Looks like you spend less on living than the average person."
+        }
+        
+        assessment += " The amount of money allocated for food and savings have been adjusted accordingly."
     }
 }
 
