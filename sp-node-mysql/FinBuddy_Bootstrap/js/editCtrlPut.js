@@ -40,7 +40,7 @@ editApp.controller('editCtrlPut', function($scope, $http){
         savings_budget_data["to_save_perc"] = to_save_perc;
         savings_budget_data["to_buy_perc"] = to_buy_perc;
 
-        $http.put("http://155.246.213.64:3000/budget_data/"+localStorage["user_id"], budgetData).success(function(data){
+        $http.put("http://155.246.213.124:3000/budget_data/"+localStorage["user_id"], budgetData).success(function(data){
             if(data.error){
                 console.log("error");
                 console.log(data);
@@ -51,7 +51,7 @@ editApp.controller('editCtrlPut', function($scope, $http){
             }
         });
 
-        $http.put("http://155.246.213.64:3000/living_budget_data/"+localStorage["user_id"], livingData).success(function(data){
+        $http.put("http://155.246.213.124:3000/living_budget_data/"+localStorage["user_id"], livingData).success(function(data){
             if(data.error){
                 console.log("error");
                 console.log(data);
@@ -62,7 +62,7 @@ editApp.controller('editCtrlPut', function($scope, $http){
             }
         });
 
-        $http.put("http://155.246.213.64:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data).success(function(data){
+        $http.put("http://155.246.213.124:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data).success(function(data){
             if(data.error){
                 console.log("error");
                 console.log(data);

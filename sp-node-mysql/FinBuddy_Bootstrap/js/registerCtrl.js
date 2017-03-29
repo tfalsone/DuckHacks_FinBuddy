@@ -12,7 +12,7 @@ registerApp.controller('registerCtrl', function($scope, $http) {
         //data["create_date"] = new Date();
         localStorage.setItem("user_id", mydata["user_id"]);
 
-    $http.post("http://155.246.213.64:3000/users", mydata).success(function (data) {
+    $http.post("http://155.246.213.124:3000/users", mydata).success(function (data) {
         if (data.error) {
             console.log("Error:");
             console.log(data);

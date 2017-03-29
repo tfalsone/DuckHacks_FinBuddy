@@ -15,7 +15,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
 
         food_budget_data = {};
 
-    $http.get('http://155.246.213.64:3000/users/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/users/' + localStorage["user_id"])
         .success(function (data) {
         user_data = data[0];
         $scope.user_name = user_data["name"]
@@ -23,7 +23,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
     });
 
 
-    $http.get('http://155.246.213.64:3000/budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/budget_data/' + localStorage["user_id"])
         .success(function (data) {
         budget_data = data[0];
         $scope.income_monthly = budget_data["income_monthly"];
@@ -94,7 +94,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
         });
     });
 
-    $http.get('http://155.246.213.64:3000/living_budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/living_budget_data/' + localStorage["user_id"])
         .success(function (data) {
         living_budget_data = data[0];
 
@@ -151,13 +151,13 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
         });
     });
 
-    $http.get('http://155.246.213.64:3000/savings_budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/savings_budget_data/' + localStorage["user_id"])
         .success(function (data) {
         savings_budget_data = data[0];
 
     });
 
-    $http.get('http://155.246.213.64:3000/food_budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/food_budget_data/' + localStorage["user_id"])
         .success(function (data) {
         food_budget_data = data[0];
         $scope.food_budget_perc = food_budget_data["food_tot_perc"];
@@ -202,7 +202,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
 
     });
 
-    $http.get('http://155.246.213.64:3000/monthly_savings/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/monthly_savings/' + localStorage["user_id"])
         .success(function (data) {
         monthly_saving = data[0];
         $scope.money_spent = ($scope.income_monthly - $scope.food_budget - $scope.living_budget).toFixed(2);

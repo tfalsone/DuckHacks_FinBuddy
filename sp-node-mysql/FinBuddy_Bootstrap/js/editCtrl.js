@@ -3,7 +3,7 @@ var usersApp = angular.module('usersApp', ['ngRoute']);
 usersApp.controller('populateFields', function ($scope, $http) {
     "use strict";
 
-    $http.get('http://155.246.213.64:3000/budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/budget_data/' + localStorage["user_id"])
         .success(function (data) {
             var budget_data = data[0];
             $scope.income_monthly = budget_data["income_monthly"];
@@ -13,7 +13,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
 
         });
 
-    $http.get('http://155.246.213.64:3000/savings_budget_data/' +localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/savings_budget_data/' +localStorage["user_id"])
         .success(function (data) {
             var savings_budget_data = data[0];
             $scope.saving_perc = savings_budget_data["to_save_perc"];
@@ -22,7 +22,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
 
         });
 
-    $http.get('http://155.246.213.64:3000/living_budget_data/' +localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/living_budget_data/' +localStorage["user_id"])
         .success(function (data) {
             var living_budget_data = data[0];
 
@@ -41,7 +41,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
 
         });
 
-    $http.get('http://155.246.213.64:3000/food_budget_data/' + localStorage["user_id"])
+    $http.get('http://155.246.213.124:3000/food_budget_data/' + localStorage["user_id"])
         .success(function (data) {
         var food_budget_data = data[0];
         $scope.food_budget_perc = food_budget_data["food_tot_perc"];
@@ -91,7 +91,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
         savings_budget_data["to_save_perc"] = to_save_perc;
         savings_budget_data["to_buy_perc"] = to_buy_perc;
 
-        $http.put("http://155.246.213.64:3000/budget_data/"+localStorage["user_id"], budgetData)
+        $http.put("http://155.246.213.124:3000/budget_data/"+localStorage["user_id"], budgetData)
           .success(function(data){
                if(data.error){
                 console.log("error");
@@ -103,7 +103,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
             }
         });
 
-        $http.put("http://155.246.213.64:3000/living_budget_data/"+localStorage["user_id"], livingData)
+        $http.put("http://155.246.213.124:3000/living_budget_data/"+localStorage["user_id"], livingData)
           .success(function(data){
             if(data.error){
                 console.log("error");
@@ -115,7 +115,7 @@ usersApp.controller('populateFields', function ($scope, $http) {
             }
         });
 
-        $http.put("http://155.246.213.64:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data)
+        $http.put("http://155.246.213.124:3000/savings_budget_data/"+localStorage["user_id"], savings_budget_data)
           .success(function(data){
            if(data.error){
                 console.log("error");

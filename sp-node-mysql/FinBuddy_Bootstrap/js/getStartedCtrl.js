@@ -39,7 +39,7 @@ getStartedApp.controller('getStartedCtrl', function($scope, $http){
     livingData["cable_internet_perc"] = cable_perc;
     livingData["school_perc"] = school_perc;
 
-    $http.post("http://155.246.213.64:3000/budget_data", budgetData).success(function(data){
+    $http.post("http://155.246.213.124:3000/budget_data", budgetData).success(function(data){
       if(data.error){
         console.log("error");
         console.log(data);
@@ -50,7 +50,7 @@ getStartedApp.controller('getStartedCtrl', function($scope, $http){
       }
     });
 
-    $http.post("http://155.246.213.64:3000/living_budget_data", livingData).success(function(data){
+    $http.post("http://155.246.213.124:3000/living_budget_data", livingData).success(function(data){
       if(data.error){
         console.log("error");
         console.log(data);
